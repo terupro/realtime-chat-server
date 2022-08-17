@@ -31,6 +31,7 @@ io.on("connection", (socket) => {
     console.log("ユーザーとの接続が切れました！" + "socket-id:" + socket.id);
   });
 });
+app.get("/", (req, res) => res.send("Hello World!"));
 
 server.listen(process.env.PORT || PORT, () => {
   console.log(`listening on ${PORT}`);
