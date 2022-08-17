@@ -32,5 +32,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(process.env.PORT || 4000, () => {
-  console.log(`listening on ${PORT}`);
+  console.log(`listening on ${process.env.PORT}`);
 });
