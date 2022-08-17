@@ -2,12 +2,11 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
-const PORT = 4000;
 const { Server } = require("socket.io");
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://realtime-chat-client-mauve.vercel.app",
   },
 });
 
@@ -32,6 +31,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => {
+server.listen(process.env.PORT || 4000, () => {
   console.log(`listening on ${PORT}`);
 });
